@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
 @SpringBootApplication
 public class DemoIocApplication {
 
@@ -14,9 +15,13 @@ public class DemoIocApplication {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		System.out.println("config loaded");
 		
-		Vodaphone vphone= (Vodaphone) context.getBean("airtel",Vodaphone.class);
-		vphone.calling();
-		vphone.data();
+//		Vodaphone vphone= (Vodaphone) context.getBean("vodaphone");
+//		vphone.calling();
+//		vphone.data();
+		
+		Sim sim= (Sim) context.getBean("airtel");
+		sim.calling();
+		sim.data();
 	}
 
 }
